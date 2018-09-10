@@ -1,0 +1,7 @@
+require './lib/account'
+account = Account.new
+account.balance
+account.deposit(20.98)
+account.balance
+account.withdraw(30.21)
+account.balance

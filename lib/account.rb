@@ -1,8 +1,11 @@
-class Account
-  attr_accessor :balance
+require_relative 'transaction_log'
 
-  def initialize
-    @balance = 0.00
+class Account
+  attr_accessor :balance, :transaction_log
+
+  def initialize(balance = 0.0, transaction_log = TransactionLog.new)
+    @balance = balance
+    @transaction_log = transaction_log
   end
 
   def deposit(deposit_amount)
