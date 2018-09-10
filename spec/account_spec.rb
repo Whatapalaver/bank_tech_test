@@ -4,18 +4,21 @@ describe Account do
 
   subject(:account) { described_class.new }
 
-  it 'is an Account object' do
-    expect(account.is_a?(Account)).to eq true
-  end
+  context "New Account" do
 
-  it 'responds to expected methods' do
-    expect(account).to respond_to(:balance)
-    expect(account).to respond_to(:deposit)
-    expect(account).to respond_to(:withdraw)
-  end
+    it 'is an Account object' do
+      expect(account.is_a?(Account)).to eq true
+    end
 
-  it 'has a starting balance of zero' do
-    expect(account.balance).to eq 0
+    it 'responds to expected methods' do
+      expect(account).to respond_to(:balance)
+      expect(account).to respond_to(:deposit)
+      expect(account).to respond_to(:withdraw)
+    end
+
+    it 'has a starting balance of zero' do
+      expect(account.balance).to eq 0
+    end
   end
 
   context "making deposits" do
@@ -32,7 +35,7 @@ describe Account do
       expect(account.balance).to eq 10
     end
 
-    it "sends the balance negative when more cash tna is available is withdrawn" do
+    it "sends the balance negative when more cash than is available is withdrawn" do
       account.deposit(20)
       account.withdraw(30)
       expect(account.balance).to eq -10
