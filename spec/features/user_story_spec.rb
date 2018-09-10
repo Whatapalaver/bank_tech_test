@@ -20,8 +20,8 @@ describe 'user stories' do
   # Who sometimes runs short of cash
   # I would like to be able to withdraw money
 
-  xit 'accepts the withdrawal of cash' do
-    
+  it 'allows the withdrawal of cash' do
+    expect { account.withdraw(20) }.to change { account.balance }.by -20
   end
 
   # User Story 3

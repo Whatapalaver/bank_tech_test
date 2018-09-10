@@ -23,7 +23,20 @@ describe Account do
       account.deposit(20)
       expect(account.balance).to eq 20
     end
-    
+  end
+
+  context "making withdrawals" do
+    it "updates the balance when cash is withdrawn" do
+      account.deposit(20)
+      account.withdraw(10)
+      expect(account.balance).to eq 10
+    end
+
+    it "sends the balance negative when more cash tna is available is withdrawn" do
+      account.deposit(20)
+      account.withdraw(30)
+      expect(account.balance).to eq -10
+    end
   end
 
 end
