@@ -5,13 +5,13 @@ It's week 10 at Makers and we are practising our tech test skills.
 
 Specification
 ----
-###Requirements
+### Requirements
 - [ ] You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
 - [ ] Deposits, withdrawal.
 - [ ] Account statement (date, amount, balance) printing.
 - [ ] Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
-###Acceptance criteria
+### Acceptance criteria
 Given a client makes a deposit of 1000 on 10-01-2012  
 And a deposit of 2000 on 13-01-2012  
 And a withdrawal of 500 on 14-01-2012  
@@ -29,7 +29,7 @@ Coding Approach
 -----
 Without any requirement to run a GUI I have opted to write this in Ruby as I have most familiarity with the language.
 
-###User Stories
+### User Stories
 ```
 As  user
 With excess cash
@@ -51,7 +51,7 @@ Who isn't familiar with timestamps
 I would like my statement to show dates as dd/mm/yyyy
 ```
 
-###How to install, run and test
+### How to install, run and test
 
 - `git Clone https://github.com/Whatapalaver/bank_tech_test`
 - `bundle install`
