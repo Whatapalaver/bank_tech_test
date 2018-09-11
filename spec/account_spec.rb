@@ -20,7 +20,7 @@ describe Account do
     end
 
     it 'can be initiated with an existing balance' do
-      another_new_account = Account.new(1000,TransactionLog.new)
+      another_new_account = Account.new(1000, TransactionLog.new)
       expect(another_new_account.balance).to eq 1000
     end
   end

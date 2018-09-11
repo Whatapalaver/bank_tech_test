@@ -56,6 +56,7 @@
       ],
       "/Users/whatapalaver/Documents/GitHub/tech_tests/bank_tech_test/lib/account.rb": [
         1,
+        1,
         null,
         1,
         1,
@@ -67,9 +68,11 @@
         null,
         1,
         5,
+        5,
         null,
         null,
         1,
+        4,
         4,
         null,
         null
@@ -81,7 +84,11 @@
         1,
         null,
         1,
-        12,
+        16,
+        null,
+        null,
+        1,
+        11,
         null,
         null
       ],
@@ -147,8 +154,38 @@
         null,
         null,
         null
+      ],
+      "/Users/whatapalaver/Documents/GitHub/tech_tests/bank_tech_test/spec/transaction_log_spec.rb": [
+        1,
+        null,
+        5,
+        2,
+        2,
+        3,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1536612835
+    "timestamp": 1536654636
   }
 }
