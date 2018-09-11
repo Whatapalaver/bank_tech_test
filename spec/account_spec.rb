@@ -4,7 +4,7 @@ describe Account do
   subject(:account) { described_class.new(0, transaction_log, printer) }
   let(:transaction_log) { double :transaction_log, transactions: [] }
   let(:transaction) { [] }
-  let(:printer) { double :printer, print_statement: "date || credit || debit || balance\n09/11/18 ||  || 15.00 || 15.00 || \n11/09/18 || 30.00 ||  || 30.00\n" }
+  let(:printer) { double :printer, print_statement: "date || credit || debit || balance\n09/11/2018 ||  || 15.00 || 15.00 || \n11/09/2018 || 30.00 ||  || 30.00\n" }
 
   context 'New Account' do
     it 'is an Account object' do
@@ -61,7 +61,7 @@ describe Account do
 
   context 'printing statements' do
     it 'outputs the transaction log' do
-      expect(account.print_statement).to eq "date || credit || debit || balance\n09/11/18 ||  || 15.00 || 15.00 || \n11/09/18 || 30.00 ||  || 30.00\n"
+      expect(account.print_statement).to eq "date || credit || debit || balance\n09/11/2018 ||  || 15.00 || 15.00 || \n11/09/2018 || 30.00 ||  || 30.00\n"
     end
   end
 end

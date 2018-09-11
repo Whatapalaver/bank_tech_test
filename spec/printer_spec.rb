@@ -6,7 +6,7 @@ describe Printer do
   let(:transactions) { [{ date: date, credit: '20.00', balance: '20.00' }, { date: date, debit: '10.00', balance: '10.00' }] }
 
   it 'prints the statement' do
-    output = "date || credit || debit || balance\n11/09/18 ||  || 10.00 || 10.00\n11/09/18 || 20.00 ||  || 20.00\n"
+    output = "date || credit || debit || balance\n11/09/2018 ||  || 10.00 || 10.00\n11/09/2018 || 20.00 ||  || 20.00\n"
     expect { printer.print_statement(transactions) }.to output(output).to_stdout
   end
 end

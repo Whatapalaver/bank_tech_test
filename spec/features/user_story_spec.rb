@@ -45,13 +45,13 @@ describe 'user stories' do
     # User Story 4
     # As a user
     # Who isn't familiar with timestamps
-    # I would like my statement to show dates as dd/mm/yy
+    # I would like my statement to show dates as dd/mm/yyyy
 
-    it 'displays dates in dd/mm/yy format' do
+    it 'displays dates in dd/mm/yyyy format' do
       date1 = Time.new(2018, 9, 9)
       date2 = Time.new(2018, 9, 10)
       date3 = Time.new(2018, 9, 11)
-      output = "date || credit || debit || balance\n11/09/18 ||  || 12.00 || 18.00\n10/09/18 || 10.00 ||  || 30.00\n09/09/18 || 20.00 ||  || 20.00\n"
+      output = "date || credit || debit || balance\n11/09/2018 ||  || 12.00 || 18.00\n10/09/2018 || 10.00 ||  || 30.00\n09/09/2018 || 20.00 ||  || 20.00\n"
       account.deposit(20, date1)
       account.deposit(10, date2)
       account.withdraw(12, date3)
@@ -60,10 +60,3 @@ describe 'user stories' do
   end
 end
 
-# As user
-# Who likes to know whats going on
-# I would like to be able to view a list of my transactions
-
-# As a user
-# Who isn't familiar with timestamps
-# I would like my statement to show dates as dd/mm/yy
