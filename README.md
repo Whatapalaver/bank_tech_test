@@ -48,25 +48,41 @@ I would like to be able to view a list of my transactions
 ```
 As a user
 Who isn't familiar with timestamps
-I would like my statement to show dates as dd/mm/yy
+I would like my statement to show dates as dd/mm/yyyy
 ```
 
 ###How to install, run and test
 
-
-
+- `git Clone https://github.com/Whatapalaver/bank_tech_test`
+- `bundle install`
+- run `rake` for testinmg
+- run `irb` and load the main account file (require './lib/account.rb')
+- create new Account `account = Account.new` add an argument if you want to initiate with an existing balance
+- Example irb test below but the following actions are allowed:
+```
+account.balance
+account.deposit(amount, date(dd/mm/yyyy)) date defaults to now if omitted
+account.withdraw(amount, date(dd/mm/yyyy)) date defaults to now if omitted
+account.print_statement
+```
 
 *Example irb console test:*
 
 ```
-require
-
-
+require './lib/account'
+account = Account.new
+account.balance
+account.deposit(20.98)
+account.balance
+account.withdraw(30.21)
+account.balance
+account.print_statement
 ```
 
 irb console output:
 
-![console output]()
+![console output](./docs/bank_test_console_test.png)
 
 *Test coverage*
 
+![RSPEC and SimpleCov results](./docs/bank_test_coverage.png)
