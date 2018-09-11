@@ -86,3 +86,13 @@ irb console output:
 *Test coverage*
 
 ![RSPEC and SimpleCov results](./docs/bank_test_coverage.png)
+
+*irb test for acceptance criteria*
+```
+require './lib/account'
+account = Account.new
+account.deposit(1000, Date.parse('10/01/2012'))
+account.deposit(2000, Date.parse('13/01/2012'))
+account.withdraw(500, Date.parse('14/01/2012'))
+account.print_statement
+```
