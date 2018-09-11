@@ -1,7 +1,10 @@
 require 'account'
 
 describe Account do
-  subject(:account) { described_class.new }
+  subject(:account) { described_class.new(0, transaction_log, printer) }
+  let(:transaction_log) { double :transaction_log, transactions: [] }
+  let(:transaction) { [] }
+  let(:printer) { double :printer, print_statement: "date || credit || debit || balance\n09/11/18 ||  || 15.00 || 15.00 || \n11/09/18 || 30.00 ||  || 30.00\n" }
 
   context 'New Account' do
     it 'is an Account object' do
@@ -13,6 +16,7 @@ describe Account do
       expect(account).to respond_to(:deposit)
       expect(account).to respond_to(:withdraw)
       expect(account).to respond_to(:transaction_log)
+      expect(account).to respond_to(:print_statement)
     end
 
     it 'has a starting balance of zero' do
@@ -26,16 +30,22 @@ describe Account do
   end
 
   context 'making deposits' do
+    before do
+      allow(transaction_log).to receive(:add_transaction) { transaction }
+    end
     it 'updates the balance when cash is deposited' do
       account.deposit(20)
       expect(account.balance).to eq 20
     end
     it 'updates the transaction log with the latest deposit' do
-      
     end
   end
 
   context 'making withdrawals' do
+    before do
+      allow(transaction_log).to receive(:add_transaction) { transaction }
+    end
+
     it 'updates the balance when cash is withdrawn' do
       account.deposit(20)
       account.withdraw(10)
@@ -46,6 +56,12 @@ describe Account do
       account.deposit(20)
       account.withdraw(30)
       expect(account.balance).to eq -10
+    end
+  end
+
+  context 'printing statements' do
+    it 'outputs the transaction log' do
+      expect(account.print_statement).to eq "date || credit || debit || balance\n09/11/18 ||  || 15.00 || 15.00 || \n11/09/18 || 30.00 ||  || 30.00\n"
     end
   end
 end

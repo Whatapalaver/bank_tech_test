@@ -1,8 +1,7 @@
 describe TransactionLog do
-
   subject(:transaction_log) { described_class.new }
-  let(:deposit_transaction) { {date: date, credit: 20.00, balance: 20.00} }
-  let(:withdrawal_transaction) { {date: date, debit: 10.00, balance: 10.00} }
+  let(:deposit_transaction) { { date: date, credit: 20.00, balance: 20.00 } }
+  let(:withdrawal_transaction) { { date: date, debit: 10.00, balance: 10.00 } }
   let(:date) { Time.new(2018, 9, 11) }
 
   context 'New Transaction Log' do
