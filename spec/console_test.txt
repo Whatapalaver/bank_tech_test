@@ -5,3 +5,4 @@ account.deposit(20.98)
 account.balance
 account.withdraw(30.21)
 account.balance
+account.print_statement
