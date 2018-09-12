@@ -7,18 +7,6 @@ describe Account do
   let(:printer) { double :printer, print_statement: "date || credit || debit || balance\n09/11/2018 ||  || 15.00 || 15.00 || \n11/09/2018 || 30.00 ||  || 30.00\n" }
 
   context 'New Account' do
-    it 'is an Account object' do
-      expect(account.is_a?(Account)).to eq true
-    end
-
-    it 'responds to expected methods' do
-      expect(account).to respond_to(:balance)
-      expect(account).to respond_to(:deposit)
-      expect(account).to respond_to(:withdraw)
-      expect(account).to respond_to(:transaction_log)
-      expect(account).to respond_to(:print_statement)
-    end
-
     it 'has a starting balance of zero' do
       expect(account.balance).to eq 0
     end
