@@ -1,19 +1,33 @@
 require 'date'
 
 class Printer
-  HEADER = %w[date credit debit balance].freeze
-  DELIMITER = ' || '.freeze
 
   def print_statement(transactions)
-    puts HEADER.join(DELIMITER)
-    print statement_row(transactions)
+    statement = []
+    statement << 'date || credit || debit || balance'
+    transactions.reverse_each do |transaction|
+      statement.push(statement_row(transaction))
+    end
+    puts statement.join("\n")
   end
 
-  def statement_row(transactions)
-    row = ''
-    transactions.reverse_each do |transaction|
-      row << "#{transaction[:date].strftime('%d/%m/%Y')}#{DELIMITER}#{transaction[:credit]}#{DELIMITER}#{transaction[:debit]}#{DELIMITER}#{transaction[:balance]}\n"
+  private
+
+  def statement_row(transaction)
+    row = transaction.map do |_key, value|
+      
+      if value.is_a? Time
+        value.strftime('%d/%m/%Y')
+      elsif value == 0.0
+        ''
+      else
+        format_float(value)
+      end
     end
-    row
+    row.join(' || ')
+  end
+
+  def format_float(amount)
+    format('%.2f', amount)
   end
 end

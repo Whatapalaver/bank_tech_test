@@ -13,12 +13,12 @@ class Account
 
   def deposit(deposit_amount, date = Time.now)
     @balance += deposit_amount.to_f
-    @transaction_log.add_transaction(date: date, credit: format_float(deposit_amount), balance: format_float(@balance))
+    transaction_log.add_transaction(date: date, credit: deposit_amount, balance: balance)
   end
 
   def withdraw(withdrawal_amount, date = Time.now)
     @balance -= withdrawal_amount.to_f
-    @transaction_log.add_transaction(date: date, debit: format_float(withdrawal_amount), balance: format_float(@balance))
+    transaction_log.add_transaction(date: date, debit: withdrawal_amount, balance: balance)
   end
 
   def print_statement
@@ -26,9 +26,4 @@ class Account
     @printer.print_statement(transactions)
   end
 
-  private
-
-  def format_float(amount)
-    format('%.2f', amount)
-  end
 end

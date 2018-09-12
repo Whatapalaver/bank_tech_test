@@ -7,7 +7,12 @@ class TransactionLog
     @transactions = []
   end
 
-  def add_transaction(transaction)
-    @transactions << transaction
+  def add_transaction(date:, credit: 0, debit: 0, balance: 0)
+    @transactions << {
+      date: date,
+      credit: credit.to_f,
+      debit: debit.to_f,
+      balance: balance
+    }
   end
 end
