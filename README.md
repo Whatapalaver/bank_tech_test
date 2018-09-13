@@ -27,7 +27,12 @@ date || credit || debit || balance
 
 Coding Approach
 -----
-Without any requirement to run a GUI I have opted to write this in Ruby as I have most familiarity with the language.
+Without any requirement to run a GUI I have opted to write this in Ruby as I have most familiarity with the language. Following initial feedback of my initial attempt, I re-worked my code to further separate my class functionality and ensured that all formatting of data was carried out in the presentation class rather than mixed in with the business logic.
+
+Following my final feedback, I would consider making the following changes: 
+- There is still not have enough responsibility within my TransactionLog class and that suggests it is perhaps not necessary to extract as an individual class
+- The new functionality to extract row level data for the statement printer is more abstract than the string interpolation method I'd used previously
+- I could have tested for more edge cases. For example, while the specification didn't suggest that going overdrawn was a problem, it is a common restriction and I could have provided alert messages at least. Likewise I haven't provided a capture mechanism for negative withdrawal & deposit amounts or non-number entries.
 
 ### User Stories
 ```
